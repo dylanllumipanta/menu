@@ -2,112 +2,201 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'Segoe UI',sans-serif;
 }
 
 body{
-    background:linear-gradient(135deg,#0f172a,#1e293b);
+
+    background:
+    radial-gradient(circle at top left,#4f46e5 0%,transparent 35%),
+    radial-gradient(circle at bottom right,#06b6d4 0%,transparent 30%),
+    #eef2ff;
+
     min-height:100vh;
+
     display:flex;
     justify-content:center;
     align-items:center;
+
+    padding:40px;
 }
 
-.contenedor{
-    width:90%;
-    max-width:700px;
-}
+.container{
 
-.perfil{
-    text-align:center;
-    color:white;
-    margin-bottom:35px;
-}
-
-.perfil h1{
-    font-size:42px;
-}
-
-.perfil h2{
-    color:#38bdf8;
-    margin-top:8px;
-    font-weight:400;
-}
-
-.perfil p{
-    margin-top:10px;
-    color:#cbd5e1;
-}
-
-.proyecto{
-    background:white;
-    padding:25px;
-    border-radius:18px;
-    margin-bottom:25px;
-    box-shadow:0 12px 30px rgba(0,0,0,.25);
-    transition:.35s;
-}
-
-.proyecto:hover{
-    transform:translateY(-8px);
-    box-shadow:0 18px 40px rgba(0,0,0,.35);
-}
-
-.proyecto h3{
-    color:#0f172a;
-    margin-bottom:12px;
-}
-
-.proyecto p{
-    color:#475569;
-    margin-bottom:20px;
-    line-height:1.6;
-}
-
-/* HIPERVÍNCULOS */
-
-.proyecto a{
-    display:inline-block;
-    text-decoration:none;
-    color:white;
-    background:#2563eb;
-    padding:12px 28px;
-    border-radius:40px;
-    font-weight:bold;
-    transition:.35s;
-    position:relative;
-    overflow:hidden;
-}
-
-/* Cambio de color */
-.proyecto a:hover{
-    background:#1d4ed8;
-    transform:scale(1.08);
-    box-shadow:0 0 18px #3b82f6;
-}
-
-/* Animación al hacer clic */
-.proyecto a:active{
-    transform:scale(.95);
-}
-
-/* Brillo deslizante */
-.proyecto a::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:-100%;
     width:100%;
-    height:100%;
-    background:linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,.6),
-        transparent
-    );
-    transition:.6s;
+    max-width:760px;
+
 }
 
-.proyecto a:hover::before{
-    left:100%;
+/* ---------- ENCABEZADO ---------- */
+
+header{
+
+    text-align:center;
+    margin-bottom:50px;
+
+}
+
+header h1{
+
+    font-size:55px;
+    color:#1e293b;
+
+}
+
+header p{
+
+    color:#475569;
+    font-size:20px;
+    margin-top:10px;
+}
+
+/* ---------- TARJETAS ---------- */
+
+.card{
+
+    background:rgba(255,255,255,.75);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:22px;
+
+    padding:35px;
+
+    margin-bottom:30px;
+
+    border:1px solid rgba(255,255,255,.6);
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+/* Barra decorativa */
+
+.card::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:7px;
+    height:100%;
+
+    background:linear-gradient(#4f46e5,#06b6d4);
+
+}
+
+/* Brillo */
+
+.card::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-150px;
+    left:-200px;
+
+    width:180px;
+    height:400px;
+
+    background:rgba(255,255,255,.35);
+
+    transform:rotate(25deg);
+
+    transition:.7s;
+
+}
+
+.card:hover::after{
+
+    left:850px;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 55px rgba(0,0,0,.15);
+
+}
+
+/* ---------- TEXTO ---------- */
+
+.card h2{
+
+    color:#1e293b;
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    color:#64748b;
+
+    line-height:1.7;
+
+    margin-bottom:28px;
+
+}
+
+/* ---------- BOTÓN ---------- */
+
+.card a{
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:linear-gradient(135deg,#4f46e5,#06b6d4);
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.card a:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 8px 25px rgba(79,70,229,.45);
+
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media(max-width:700px){
+
+header h1{
+
+font-size:40px;
+
+}
+
+.card{
+
+padding:25px;
+
+}
+
 }

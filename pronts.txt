@@ -1,3 +1,6 @@
 actua como diseñador grafico y agrega mejoras visuales a este menu, añade:
 1.el menu estilo moderno y limpio.
 2.un efecto a los hipervinculos.
+3.agrega un efecto mas vistoso en los botones.
+4.has que el menu tenga un efecto minimalista.
+5.has que el estilo se vea profecional.
